@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import TopSongsContainer from './TopSongsContainer'
 
-export default class SpotifyApp extends React.Component {
+export default class HomeComponent extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
@@ -23,9 +24,9 @@ export default class SpotifyApp extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="app-container">
         <h3>
-          Hello, {this.state.name}!
+          Welcome to the Spotifysor {this.state.name}! I will recommend some cool songs to you.
         </h3>
         <hr />
         <form >
@@ -39,6 +40,7 @@ export default class SpotifyApp extends React.Component {
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
+        <TopSongsContainer/>
       </div>
     );
   }
