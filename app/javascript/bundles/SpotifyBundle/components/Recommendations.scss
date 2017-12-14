@@ -1,0 +1,12 @@
+.recommendations-overview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 45vw;
+}
+
+.recommendations {
+  flex-basis: 45%;
+  width: 45vw;
+  float: right;
+}

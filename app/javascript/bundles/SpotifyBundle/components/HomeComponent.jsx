@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import TopSongsContainer from './TopSongsContainer'
+import NavBar from './NavBar'
+import IntroContainer from './IntroContainer'
+import Recommendations from './Recommendations'
 
 export default class HomeComponent extends React.Component {
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
+    // name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
 
   /**
@@ -15,32 +18,24 @@ export default class HomeComponent extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.name };
+    // this.state = { name: this.props.name };
   }
 
-  updateName = (name) => {
-    this.setState({ name });
-  };
+  // updateName = (name) => {
+  //   this.setState({ name });
+  // };
 
   render() {
     return (
-      <div className="app-container">
-        <h3>
-          Welcome to the Spotifysor {this.state.name}! I will recommend some cool songs to you.
-        </h3>
-        <hr />
-        <form >
-          <label htmlFor="name">
-            Say hello to:
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={this.state.name}
-            onChange={(e) => this.updateName(e.target.value)}
-          />
-        </form>
-        <TopSongsContainer/>
+      <div className="container react-app">
+        <NavBar/>
+        <div className="content">
+          <IntroContainer/>
+          <div className="rec-top">
+            <Recommendations/>
+            <TopSongsContainer/>
+          </div>
+        </div>
       </div>
     );
   }

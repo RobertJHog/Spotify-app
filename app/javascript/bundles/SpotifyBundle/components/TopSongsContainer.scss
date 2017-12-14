@@ -1,0 +1,12 @@
+.topsongs-overview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 45vw;
+}
+
+.topsongs {
+  flex-basis: 45%;
+  width: 45vw;
+  float: left;
+}

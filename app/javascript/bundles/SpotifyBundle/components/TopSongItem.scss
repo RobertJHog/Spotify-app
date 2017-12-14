@@ -1,0 +1,15 @@
+.topsong-item {
+  flex-basis: 100%;
+  margin: .5em;
+  padding: 1em;
+}
+
+.favorite {
+  float: right;
+}
+//
+// @media screen and (max-width:480px) {
+//   .topsong-item {
+//     flex-basis: 90%;
+//   }
+// }

@@ -18,17 +18,12 @@ export default class SpotifyApp extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.name };
   }
-
-  updateName = (name) => {
-    this.setState({ name });
-  };
 
   render() {
     return (
       <Provider store={store}>
-        <HomeComponent name={name}/>
+        <HomeComponent/>
       </Provider>
     );
   }
