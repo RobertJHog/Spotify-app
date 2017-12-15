@@ -7,7 +7,7 @@ import HomeComponent from './components/HomeComponent'
 
 export default class SpotifyApp extends React.Component {
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
+    // name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
 
   /**

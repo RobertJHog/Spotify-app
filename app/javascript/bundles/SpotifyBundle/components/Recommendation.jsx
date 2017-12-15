@@ -15,7 +15,7 @@ class Recommendation extends PureComponent {
 
   render() {
     const { _id, title, artist, album } = this.props
-    let imageStyle = {width: '100px'};
+    let imageStyle = {width: '10vw'};
 
     return(
       <Box className="recommendation-item">
@@ -29,8 +29,7 @@ class Recommendation extends PureComponent {
                 <strong>{ artist }</strong> - <strong>{ title }</strong> <small>(3m)</small>
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-              </p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. </p>
             </Content>
           </Media.Content>
         </Media>

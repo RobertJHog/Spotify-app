@@ -3,7 +3,6 @@
 class SpotifyAppController < ApplicationController
   layout "spotify_app"
 
-  def index
-    @hello_world_props = { name: "Sir" }
+  def top_tracks
   end
 end
