@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import Title from './Title'
 import { connect } from 'react-redux'
-import Recommendation from './Recommendation'
+import RecommendationItem from './RecommendationItem'
 import { Box } from 'reactbulma'
 import './Recommendations.scss'
 
-class Recommendations extends PureComponent {
-  renderRecommendation(topsong, index) {
+class Recommendations extends React.Component {
+  renderRecommendations(recommendation, index) {
     return (
-      <Recommendation key={index} {...topsong} />
+      <RecommendationItem key={index} {...recommendation} />
     )
   }
 
@@ -20,7 +20,7 @@ class Recommendations extends PureComponent {
             <Title content="Recommendations" />
           </header>
           <main className="container recommendations-overview">
-            { this.props.topsongs.map(this.renderRecommendation) }
+            { this.props.recommendations.map(this.renderRecommendations) }
           </main>
         </div>
       </div>
@@ -28,8 +28,6 @@ class Recommendations extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ topsongs }) => ({
-  topsongs
-})
+const mapStateToProps = ({ recommendations }) => ({ recommendations })
 
 export default connect(mapStateToProps)(Recommendations)

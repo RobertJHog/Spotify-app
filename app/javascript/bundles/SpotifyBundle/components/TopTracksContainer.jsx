@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import Title from './Title'
 import { connect } from 'react-redux'
-import TopSongItem from './TopSongItem'
+import TopTrackItem from './TopTrackItem'
 import { Box } from 'reactbulma'
-import './TopSongsContainer.scss'
+import './TopTracksContainer.scss'
 
-class TopSongsContainer extends PureComponent {
-  renderTopSong(topsong, index) {
+class TopTracksContainer extends Component {
+  renderTopTrack(toptrack, index) {
     return (
-      <TopSongItem key={index} {...topsong} />
+      <TopTrackItem key={index} {...toptrack} />
     )
   }
 
@@ -20,7 +20,7 @@ class TopSongsContainer extends PureComponent {
             <Title content="Top Songs" />
           </header>
           <main className="container topsongs-overview">
-            { this.props.topsongs.map(this.renderTopSong) }
+            { this.props.toptracks.map(this.renderTopTrack) }
           </main>
         </div>
       </div>
@@ -28,9 +28,6 @@ class TopSongsContainer extends PureComponent {
   }
 }
 
+const mapStateToProps = ({ toptracks }) => ({ toptracks })
 
-const mapStateToProps = ({ topsongs }) => ({
-  topsongs
-})
-
-export default connect(mapStateToProps)(TopSongsContainer)
+export default connect(mapStateToProps)(TopTracksContainer)

@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import Title from '../components/Title'
 import picture from '../../../../assets/images/default-qofs.jpeg'
 import { Card, Box, Media, Content, Level, Checkbox } from 'reactbulma'
-import './Recommendation.scss'
+import './RecommendationItem.scss'
 
-class Recommendation extends PureComponent {
+class RecommendationItem extends PureComponent {
   static propTypes = {
     artist: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -38,6 +38,6 @@ class Recommendation extends PureComponent {
   }
 }
 
-const mapStateToProps = { Recommendation }
+const mapStateToProps = { RecommendationItem }
 
-export default connect(null, mapStateToProps)(Recommendation)
+export default connect(null, mapStateToProps)(RecommendationItem)

@@ -1,5 +1,9 @@
-import topsongs from './topsongs'
+import toptracks from './toptracks'
+import recommendations from './recommendations'
+import seeds from './seeds'
 
 export default {
-  topsongs
+  toptracks,
+  recommendations,
+  seeds
 }
