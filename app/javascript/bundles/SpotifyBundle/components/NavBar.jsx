@@ -7,6 +7,10 @@ class NavBar extends PureComponent {
     //   signedIn: PropTypes.bool.isRequired
     // }
 
+  signOut () {
+    AuthenticationClient.clearCookies(getApplication());
+  }
+
   render() {
     const { signedIn } = true;
 
@@ -17,7 +21,10 @@ class NavBar extends PureComponent {
         </Level.Left>
         <Level.Right>
           <Level.Item>
-            <a href='/auth/spotify'> {signedIn ? 'Sign out' : 'Sign in with Spotify'} </a>
+            <a href='/auth/spotify'> 'Sign in with Spotify' </a>
+          </Level.Item>
+          <Level.Item>
+            <a href='/auth/spotify' onClick={this.signOut.bind(this)}> 'Sign out' </a>
           </Level.Item>
         </Level.Right>
       </Level>

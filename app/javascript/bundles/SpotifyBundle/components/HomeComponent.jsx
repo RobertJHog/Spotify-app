@@ -1,39 +1,27 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import TopSongsContainer from './TopSongsContainer'
+import TopTracksContainer from './TopTracksContainer'
 import NavBar from './NavBar'
 import IntroContainer from './IntroContainer'
 import Recommendations from './Recommendations'
 
 export default class HomeComponent extends React.Component {
   static propTypes = {
-    // name: PropTypes.string.isRequired, // this is passed from the Rails view
+    name: PropTypes.string.isRequired
   };
 
-  /**
-   * @param props - Comes from your rails view.
-   */
-  constructor(props) {
-    super(props);
-
-    // How to set initial state in ES6 class syntax
-    // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    // this.state = { name: this.props.name };
-  }
-
-  // updateName = (name) => {
-  //   this.setState({ name });
-  // };
-
   render() {
+    const name = this.props.name
+
     return (
       <div className="container react-app">
         <NavBar/>
+        <h1> { name } </h1>
         <div className="content">
           <IntroContainer/>
           <div className="rec-top">
+            <TopTracksContainer/>
             <Recommendations/>
-            <TopSongsContainer/>
           </div>
         </div>
       </div>
