@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     # Get recommendations
     # recommendations = RSpotify::Recommendations.generate(seed_tracks: my_fav_tracks.map(&:id))
-    recommendations = RSpotify::Recommendations.generate(seed_tracks: seeds_arrays)
-    recommendations.tracks #=> (Track array)
+    # recommendations = RSpotify::Recommendations.generate(seed_tracks: seeds_arrays)
+    # recommendations.tracks #=> (Track array)
   end
 end

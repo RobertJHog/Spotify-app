@@ -10,11 +10,11 @@ import './LikeButton.scss'
 import './TopTrackItem.scss'
 
 class TopTrackItem extends React.Component {
-  static propTypes = {
-    artist: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    album: PropTypes.string.isRequired
-  }
+  // static propTypes = {
+  //   artist: PropTypes.string.isRequired,
+  //   title: PropTypes.string.isRequired,
+  //   album: PropTypes.string.isRequired
+  // }
 
   toggleLike = () => {
       this.props.toggleLike(this.props.id)

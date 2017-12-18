@@ -3,6 +3,7 @@ import Title from './Title'
 import { connect } from 'react-redux'
 import TopTrackItem from './TopTrackItem'
 import { Box } from 'reactbulma'
+import fetchToptracks from '../actions/toptracks/fetch'
 import './TopTracksContainer.scss'
 
 class TopTracksContainer extends Component {
@@ -11,6 +12,12 @@ class TopTracksContainer extends Component {
       <TopTrackItem key={index} {...toptrack} />
     )
   }
+
+  componentDidMount() {
+    console.log("HI!")
+    this.props.fetchToptracks()
+    console.log(this.props.toptracks)
+}
 
   render() {
     return(
@@ -30,4 +37,4 @@ class TopTracksContainer extends Component {
 
 const mapStateToProps = ({ toptracks }) => ({ toptracks })
 
-export default connect(mapStateToProps)(TopTracksContainer)
+export default connect(mapStateToProps, {fetchToptracks})(TopTracksContainer)
