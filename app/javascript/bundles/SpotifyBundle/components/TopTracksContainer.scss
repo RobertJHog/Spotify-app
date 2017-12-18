@@ -2,11 +2,15 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 50vw;
+  max-width: 45vw;
 }
 
 .topsongs {
-  flex-basis: 50%;
-  width: 50vw;
+  flex-basis: 45%;
+  width: 45vw;
   float: left;
+}
+
+header {
+  margin-bottom: 1em;
 }
