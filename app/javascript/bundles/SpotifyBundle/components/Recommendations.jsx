@@ -11,7 +11,7 @@ class Recommendations extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
   }
-  
+
   renderRecommendations(recommendation, index) {
     return (
       <RecommendationItem key={index} {...recommendation} />
@@ -19,16 +19,18 @@ class Recommendations extends React.Component {
   }
 
   handleClick() {
-    const recommendationsArray = []
+    const seedsArray = []
     this.props.toptracks.map(function (toptrack) {
       if (toptrack.liked === true) {
-        recommendationsArray.push(toptrack)
+        seedsArray.push(toptrack)
       } else {
         return
       }
     })
-    console.log(recommendationsArray)
+    console.log(seedsArray)
     // return recommendationsArray
+
+    // this.dispatch(fetchRecommendations(seedsArray)) --> komt in User controller terecht.
   }
 
   // API call to spotify with recommendationsArray
