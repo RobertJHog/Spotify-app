@@ -8,7 +8,7 @@ export default () => {
       dispatch({
         type: FETCH_TOPTRACKS,
         payload: json.data,
-        receivedAt: Date.now()
+        // receivedAt: Date.now()
       })
     })
   }

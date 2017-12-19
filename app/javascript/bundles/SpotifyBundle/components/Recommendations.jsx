@@ -77,7 +77,5 @@ class Recommendations extends React.Component {
 }
 
 const mapStateToProps = ({ recommendations, toptracks }) => ({ recommendations, toptracks })
-// const mapDispatchToProps = { handleClick: addSeeds }
-
 
 export default connect(mapStateToProps, {fetchRecommendations})(Recommendations)

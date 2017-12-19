@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  def index
-    # spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-    spotify_user = RSpotify::User.new(request.env['rack.session'][:ommiauth_spotify_force_approval?])
+  def spotify
+    spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    # spotify_user = RSpotify::User.new(request.env['rack.session'][:ommiauth_spotify_force_approval?])
 
     # session[:spotify_access_token] = request.env['omniauth.auth']
 

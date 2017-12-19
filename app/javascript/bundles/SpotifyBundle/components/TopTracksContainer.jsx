@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTyps from 'prop-types'
 import Title from './Title'
 import { connect } from 'react-redux'
 import TopTrackItem from './TopTrackItem'
@@ -7,6 +8,13 @@ import fetchToptracks from '../actions/toptracks/fetch'
 import './TopTracksContainer.scss'
 
 class TopTracksContainer extends Component {
+  // static propTypes = {
+  //   artists: PropTypes.string.isRequired,
+  //   duration_ms: PropTypes.integer.isRequired,
+  //   name: PropTypes.string.isRequired,
+  //   id: PropTypes.string.isRequired
+  // }
+
   renderTopTrack(toptrack, index) {
     return (
       <TopTrackItem key={index} {...toptrack} />

@@ -3,11 +3,9 @@ import PropTypes from 'prop-types'
 import RecommendationItem from './RecommendationItem'
 
 class RecommendationsOverview extends Component {
-  // static propTypes = {
-  //   artist: PropTypes.string.isRequired,
-  //   title: PropTypes.string.isRequired,
-  //   album: PropTypes.string.isRequired
-  // }
+  static propTypes = {
+    seedsArray: PropTypes.array.isRequired
+  }
 
   renderRecommendations(seed, index) {
     return (

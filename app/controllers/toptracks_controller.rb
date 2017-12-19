@@ -3,7 +3,9 @@ class ToptracksController < ApplicationController
 
   def index
     # spotify_user = RSpotify::User.new(session[:spotify_access_token])
-
+    # spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    # # spotify_user = @spotify_user
+    #
     # @top_tracks = spotify_user.top_tracks(time_range: 'short_term') #=> (Track array)
 
     @top_tracks = [
