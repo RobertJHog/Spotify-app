@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get 'auth/spotify/callback', to: 'spotify_app#index'
 
   resources :toptracks, defaults: { format: :json}
-
-  # namespace :api do
-  #   resources :toptracks, defaults: { format: :json }
-  # end
+  resources :recommendations, defaults: { format: :json}
+  resources :users, defaults: { format: :json}
 end

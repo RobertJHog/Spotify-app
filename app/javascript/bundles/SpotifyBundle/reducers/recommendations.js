@@ -38,7 +38,7 @@ const dummyRecommendations = [
   }
 ]
 
-export default (state = dummyRecommendations, { type, payload } = {}) => {
+export default (state = [], { type, payload } = {}) => {
   switch(type) {
     case FETCH_RECOMMENDATIONS :
       return [].concat(payload)

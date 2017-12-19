@@ -1,8 +1,8 @@
-export const CREATE_SEED = 'CREATE_SEED'
+export const ADD_SEEDS = 'ADD_SEEDS'
 
-export default (newSeed) => {
+export default (newSeeds) => {
   return {
-    type: CREATE_SEED,
-    payload: newSeed
+    type: ADD_SEEDS,
+    payload: newSeeds
   }
 }

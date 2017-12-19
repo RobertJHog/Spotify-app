@@ -88,7 +88,7 @@ const dummyTopTracks = [
   },
 ]
 
-export default (state = dummyTopTracks, { type, payload } = {}) => {
+export default (state = [], { type, payload } = {}) => {
   switch(type) {
     case FETCH_TOPTRACKS :
       return [].concat(payload)

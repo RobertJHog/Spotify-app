@@ -14,9 +14,8 @@ class TopTracksContainer extends Component {
   }
 
   componentDidMount() {
-    console.log("HI!")
+    console.log("fetch function!")
     this.props.fetchToptracks()
-    console.log(this.props.toptracks)
 }
 
   render() {

@@ -1,5 +1,5 @@
 import { FETCH_SEEDS } from '../actions/seeds/fetch'
-import { CREATE_SEED } from '../actions/seeds/create'
+import { ADD_SEEDS } from '../actions/seeds/create'
 
 const Seeds = []
 
@@ -8,7 +8,7 @@ export default (state = Seeds, { type, payload } = {}) => {
     case FETCH_SEEDS :
       return [].concat(payload)
 
-    case CREATE_SEED :
+    case ADD_SEEDS :
       return [Object.assign({}, payload)].concat(state)
 
     // case SEED_REMOVED :

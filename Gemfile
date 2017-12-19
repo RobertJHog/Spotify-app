@@ -41,8 +41,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'react_on_rails', '10.0.2'
 
 # Spotify API gem for rails
-gem 'rspotify'
-gem 'omniauth-spotify'
+gem 'rspotify', git: 'https://github.com/guilhermesad/rspotify.git'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
