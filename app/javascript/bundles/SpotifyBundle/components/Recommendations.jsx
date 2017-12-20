@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import fetchRecommendations from '../actions/recommendations/fetch'
 import { Box, Button } from 'reactbulma'
 import RecommendationsOverview from './RecommendationsOverview'
-import NoRecommendationsOverview from './noRecommendationsOverview'
+import NoRecommendationsOverview from './NoRecommendationsOverview'
 import './Recommendations.scss'
 
 class Recommendations extends React.Component {
@@ -48,7 +48,8 @@ class Recommendations extends React.Component {
 
   render() {
     const isLoaded = this.state.isLoaded
-    const recommendations = this.props.recommendations
+    const recommendations = this.props.recommendations[0]
+    const { tracks } = { ...recommendations }
 
     return(
       <div className="container recommendations">
@@ -57,7 +58,7 @@ class Recommendations extends React.Component {
             <Button primary onClick={this.handleClick}>Get Recommendations</Button>
           </header>
            { isLoaded ?
-             <RecommendationsOverview recommendations = {recommendations} /> :
+             <RecommendationsOverview tracks = {tracks} /> :
              <NoRecommendationsOverview />
            }
         </div>

@@ -13,8 +13,11 @@ class RecommendationItem extends PureComponent {
   //   album: PropTypes.string.isRequired
   // }
 
+
+  // <strong>{ name }</strong> <strong> TEST </strong> <small>{ duration_ms }</small>
+
   render() {
-    const { id, title, artist, album, duration } = this.props
+    // const { id, name, duration_ms } = this.props.recommendations
     let imageStyle = {width: '10vw'};
 
     return(
@@ -26,9 +29,8 @@ class RecommendationItem extends PureComponent {
           <Media.Content>
             <Content>
               <p>
-                <strong>{ artist }</strong> <strong>{ title }</strong> <small>{ duration }</small>
+                <strong> naam </strong> <strong> TEST </strong> <small> duratie</small>
               </p>
-              <p> Please like some songs to get your recommendations. </p>
             </Content>
           </Media.Content>
         </Media>

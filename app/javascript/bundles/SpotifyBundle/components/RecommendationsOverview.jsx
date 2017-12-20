@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import RecommendationItem from './RecommendationItem'
 
 class RecommendationsOverview extends Component {
-  static propTypes = {
-    recommendations: PropTypes.array.isRequired
-  }
+  // static propTypes = {
+  //   tracks: PropTypes.array.isRequired
+  // }
 
   renderRecommendations(tracks, index) {
     return (
@@ -14,14 +14,11 @@ class RecommendationsOverview extends Component {
   }
 
   render() {
-    const recommendations = this.props.recommendations[0]
-    const { tracks } = { ...recommendations }
+    const recommendations = this.props.tracks
     console.log("props 1", recommendations)
-    console.log("props 1", tracks)
 
     return(
-      <div> test </div>
-      // <div className="container recommendations-overview"> { tracks.map(this.renderRecommendations) } </div>
+      <div className="container recommendations-overview"> { recommendations.map(this.renderRecommendations) } </div>
     )
   }
 }
