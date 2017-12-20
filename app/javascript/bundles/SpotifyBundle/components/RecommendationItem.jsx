@@ -17,19 +17,21 @@ class RecommendationItem extends PureComponent {
   // <strong>{ name }</strong> <strong> TEST </strong> <small>{ duration_ms }</small>
 
   render() {
-    // const { id, name, duration_ms } = this.props.recommendations
+    const { name, duration_ms} = this.props
+    const imagelink = this.props.album.images[2].url
+    const artist = this.props.artists[0].name
     let imageStyle = {width: '10vw'};
 
     return(
       <Box className="recommendation-item">
         <Media>
           <Media.Left>
-          <img style={imageStyle} src={picture} alt="default pic" className="img-responsive"/>
+          <img style={imageStyle} src={imagelink} alt="default pic" className="img-responsive"/>
           </Media.Left>
           <Media.Content>
             <Content>
               <p>
-                <strong> naam </strong> <strong> TEST </strong> <small> duratie</small>
+                <strong> { name } </strong> - <strong> { artist } </strong> <small> {Math.round(duration_ms*0.0000166667)} min</small>
               </p>
             </Content>
           </Media.Content>

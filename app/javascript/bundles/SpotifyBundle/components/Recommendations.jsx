@@ -42,8 +42,10 @@ class Recommendations extends React.Component {
         return
       }
     })
-    this.setLoaded(seedsArray)
     this.props.fetchRecommendations(seedsArray)
+    setTimeout(() => {
+      this.setLoaded(seedsArray)
+    }, 1000)
   }
 
   render() {
@@ -58,7 +60,7 @@ class Recommendations extends React.Component {
             <Button primary onClick={this.handleClick}>Get Recommendations</Button>
           </header>
            { isLoaded ?
-             <RecommendationsOverview tracks = {tracks} /> :
+             <RecommendationsOverview /> :
              <NoRecommendationsOverview />
            }
         </div>

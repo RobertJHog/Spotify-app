@@ -23,6 +23,7 @@ class TopTrackItem extends React.Component {
   render() {
     const { id, name, duration_ms, liked } = this.props
     const artist = this.props.artists[0].name
+    const imagelink = this.props.album.images[2].url
 
     let imageStyle = {width: '10vw'};
 
@@ -30,7 +31,7 @@ class TopTrackItem extends React.Component {
       <Box className="topsong-item">
         <Media>
           <Media.Left>
-          <img style={imageStyle} src={picture} alt="default pic" className="img-responsive"/>
+          <img style={imageStyle} src={imagelink} alt="default pic" className="img-responsive"/>
           </Media.Left>
           <Media.Content>
             <Content>
