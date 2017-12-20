@@ -7,19 +7,21 @@ class RecommendationsOverview extends Component {
     recommendations: PropTypes.array.isRequired
   }
 
-  renderRecommendations(recommendation, index) {
+  renderRecommendations(tracks, index) {
     return (
-      <RecommendationItem key={index} {...recommendation} />
+      <RecommendationItem key={index} {...tracks} />
     )
   }
 
   render() {
-    const recommendations = this.props
-    console.log("props", this.recommendations)
+    const recommendations = this.props.recommendations[0]
+    const { tracks } = { ...recommendations }
+    console.log("props 1", recommendations)
+    console.log("props 1", tracks)
 
     return(
-      <div>test </div>
-      // <div className="container recommendations-overview"> { recommendations.map(this.renderRecommendations) } </div>
+      <div> test </div>
+      // <div className="container recommendations-overview"> { tracks.map(this.renderRecommendations) } </div>
     )
   }
 }

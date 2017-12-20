@@ -23,6 +23,7 @@ class TopTracksContainer extends Component {
   }
 
   render() {
+    console.log("toptracks", this.props)
     return(
       <div className="container topsongs">
         <div className="songs wrapper">
