@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import TopTracksContainer from './TopTracksContainer'
+import TopTracksContainer from './toptracks/TopTracksContainer'
 import NavBar from './NavBar'
 import IntroContainer from './IntroContainer'
-import Recommendations from './Recommendations'
+import Recommendations from './recommendations/Recommendations'
 
 export default class HomeComponent extends React.Component {
   static propTypes = {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Title from './Title'
+import Title from '../Title'
 import { connect } from 'react-redux'
 import TopTrackItem from './TopTrackItem'
 import { Box } from 'reactbulma'
-import fetchToptracks from '../actions/toptracks/fetch'
+import fetchToptracks from '../../actions/toptracks/fetch'
 import './TopTracksContainer.scss'
 
 class TopTracksContainer extends Component {
@@ -23,7 +23,6 @@ class TopTracksContainer extends Component {
   }
 
   render() {
-    console.log("toptracks", this.props)
     return(
       <div className="container topsongs">
         <div className="songs wrapper">

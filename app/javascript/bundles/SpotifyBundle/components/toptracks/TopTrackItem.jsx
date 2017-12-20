@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import Title from '../components/Title'
-import picture from '../../../../assets/images/default-qofs.jpeg'
+import Title from '../../components/Title'
 import { Card, Box, Media, Content, Level, Checkbox } from 'reactbulma'
-import LikeButton from '../components/LikeButton'
-import likeTrack from '../actions/toptracks/like'
-import './LikeButton.scss'
+import LikeButton from '../../components/LikeButton'
+import likeTrack from '../../actions/toptracks/like'
 import './TopTrackItem.scss'
 
 class TopTrackItem extends React.Component {

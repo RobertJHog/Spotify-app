@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Title from './Title'
+import Title from '../Title'
 import { connect } from 'react-redux'
-import fetchRecommendations from '../actions/recommendations/fetch'
+import fetchRecommendations from '../../actions/recommendations/fetch'
 import { Box, Button } from 'reactbulma'
 import RecommendationsOverview from './RecommendationsOverview'
 import NoRecommendationsOverview from './NoRecommendationsOverview'
@@ -23,7 +23,6 @@ class Recommendations extends React.Component {
   }
 
   setLoaded(seedsArray) {
-    console.log(seedsArray.length)
     if (seedsArray) {
       this.setState({isLoaded: true})
     } else {

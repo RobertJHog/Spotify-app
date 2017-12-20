@@ -17,7 +17,7 @@ class NavBar extends PureComponent {
     return (
       <Level className="navbar">
         <Level.Left>
-          <Level.Item> <h1> by RjHog </h1> </Level.Item>
+          <Level.Item> </Level.Item>
         </Level.Left>
         <Level.Right>
           <Level.Item>
