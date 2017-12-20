@@ -5,6 +5,7 @@ import fetchRecommendations from '../actions/recommendations/fetch'
 import addSeeds from '../actions/seeds/create'
 import { Box, Button } from 'reactbulma'
 import RecommendationsOverview from './RecommendationsOverview'
+import NoRecommendationsOverview from './noRecommendationsOverview'
 import './Recommendations.scss'
 
 class Recommendations extends React.Component {
@@ -17,10 +18,10 @@ class Recommendations extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-    console.log("fetch rec function!")
-    this.props.fetchRecommendations()
-  }
+  // componentDidMount() {
+  //   console.log("fetch rec function!")
+  //   this.props.fetchRecommendations()
+  // }
 
   setLoaded(seedsArray) {
     console.log(seedsArray.length)
@@ -31,29 +32,19 @@ class Recommendations extends React.Component {
     }
   }
 
-  // checkId() {
-  //   this.props.toptracks.forEach(function(toptrack, y) {
-  //     if (toptrack.id !== y.id) {
-  //       return true
-  //     } else {
-  //       return false
-  //     }
-  //   }
-  // }
-
   handleClick() {
     const seedsArray = this.state.seedsArray
     seedsArray.length = 0
 
     this.props.toptracks.map(function (toptrack) {
-      let likedArray
       if (toptrack.liked === true) {
-        seedsArray.push(toptrack)
+        seedsArray.push(toptrack.id)
       } else {
         return
       }
     })
     this.setLoaded(seedsArray)
+    this.props.fetchRecommendations(seedsArray)
   }
 
   render() {
@@ -68,7 +59,7 @@ class Recommendations extends React.Component {
           </header>
            { isLoaded ?
              <RecommendationsOverview seedsArray = {seedsArray} /> :
-             null
+             <NoRecommendationsOverview />
            }
         </div>
       </div>

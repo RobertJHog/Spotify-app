@@ -10,27 +10,20 @@ import './LikeButton.scss'
 import './TopTrackItem.scss'
 
 class TopTrackItem extends React.Component {
-  // static propTypes = {
-  //   artist: PropTypes.string.isRequired,
-  //   title: PropTypes.string.isRequired,
-  //   album: PropTypes.string.isRequired
-  // }
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    duration_ms: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
+  }
 
   toggleLike = () => {
       this.props.toggleLike(this.props.id)
-    // const seedsArray = this.props.seeds
-    // for (let id of seedsArray) {
-    //   if (this.props.seeds._id === id) {
-    //         this.props.seeds.pop(_id)
-    //   } else {
-    //     this.props.seeds.push(id)
-    //   }
-    // }
-    // return
   }
 
   render() {
-    const { id, title, artist, album, liked } = this.props
+    const { id, name, duration_ms, liked } = this.props
+    const artist = this.props.artists[0].name
+
     let imageStyle = {width: '10vw'};
 
     return(
@@ -41,11 +34,8 @@ class TopTrackItem extends React.Component {
           </Media.Left>
           <Media.Content>
             <Content>
-              <p><strong>{ artist }</strong> - <strong>{ title }</strong> <small>(3m)</small></p>
+              <p><strong>{ name }</strong> - <strong> { artist}</strong> <small>{Math.round(duration_ms*0.0000166667)} min</small></p>
               <LikeButton onChange={this.toggleLike} liked={liked} />
-              <p className="song-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas.
-              </p>
             </Content>
           </Media.Content>
         </Media>

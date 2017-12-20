@@ -11,12 +11,10 @@ export default class HomeComponent extends React.Component {
   };
 
   render() {
-    const name = this.props.name
 
     return (
       <div className="container react-app">
         <NavBar/>
-        <h1> { name } </h1>
         <div className="content">
           <IntroContainer/>
           <div className="rec-top">

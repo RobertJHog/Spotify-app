@@ -7,14 +7,14 @@ import { Card, Box, Media, Content, Level, Checkbox } from 'reactbulma'
 import './RecommendationItem.scss'
 
 class RecommendationItem extends PureComponent {
-  static propTypes = {
-    artist: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    album: PropTypes.string.isRequired
-  }
+  // static propTypes = {
+  //   artist: PropTypes.string.isRequired,
+  //   title: PropTypes.string.isRequired,
+  //   album: PropTypes.string.isRequired
+  // }
 
   render() {
-    const { _id, title, artist, album } = this.props
+    const { id, title, artist, album, duration } = this.props
     let imageStyle = {width: '10vw'};
 
     return(
@@ -26,10 +26,9 @@ class RecommendationItem extends PureComponent {
           <Media.Content>
             <Content>
               <p>
-                <strong>{ artist }</strong> - <strong>{ title }</strong> <small>(3m)</small>
+                <strong>{ artist }</strong> <strong>{ title }</strong> <small>{ duration }</small>
               </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. </p>
+              <p> Please like some songs to get your recommendations. </p>
             </Content>
           </Media.Content>
         </Media>

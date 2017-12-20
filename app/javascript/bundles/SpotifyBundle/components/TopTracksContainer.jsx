@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTyps from 'prop-types'
+import PropTypes from 'prop-types'
 import Title from './Title'
 import { connect } from 'react-redux'
 import TopTrackItem from './TopTrackItem'
@@ -8,12 +8,9 @@ import fetchToptracks from '../actions/toptracks/fetch'
 import './TopTracksContainer.scss'
 
 class TopTracksContainer extends Component {
-  // static propTypes = {
-  //   artists: PropTypes.string.isRequired,
-  //   duration_ms: PropTypes.integer.isRequired,
-  //   name: PropTypes.string.isRequired,
-  //   id: PropTypes.string.isRequired
-  // }
+  static propTypes = {
+    toptracks: PropTypes.array.isRequired,
+  }
 
   renderTopTrack(toptrack, index) {
     return (
@@ -31,7 +28,7 @@ class TopTracksContainer extends Component {
       <div className="container topsongs">
         <div className="songs wrapper">
           <header>
-            <Title content="Top Songs" />
+            <Title className="title" content="Your spotify Top Tracks" />
           </header>
           <main className="container topsongs-overview">
             { this.props.toptracks.map(this.renderTopTrack) }

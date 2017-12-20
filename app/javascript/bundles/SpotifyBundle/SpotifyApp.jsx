@@ -11,7 +11,7 @@ export default class SpotifyApp extends React.Component {
   //
   // }
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
+    // name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
 
   /**
@@ -19,8 +19,7 @@ export default class SpotifyApp extends React.Component {
    */
   constructor(props) {
     super(props);
-      this.state = { name: this.props.name };
-
+      this.state = { toptracks: this.props };
   }
 
   render() {
