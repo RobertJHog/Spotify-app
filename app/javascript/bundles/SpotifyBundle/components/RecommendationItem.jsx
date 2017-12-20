@@ -17,7 +17,8 @@ class RecommendationItem extends PureComponent {
   // <strong>{ name }</strong> <strong> TEST </strong> <small>{ duration_ms }</small>
 
   render() {
-    const { name, duration_ms} = this.props
+    const { name, duration_ms, track_number } = this.props
+    const albumName = this.props.album.name
     const imagelink = this.props.album.images[2].url
     const artist = this.props.artists[0].name
     let imageStyle = {width: '10vw'};
@@ -32,6 +33,9 @@ class RecommendationItem extends PureComponent {
             <Content>
               <p>
                 <strong> { name } </strong> - <strong> { artist } </strong> <small> {Math.round(duration_ms*0.0000166667)} min</small>
+              </p>
+              <p>
+                <small> Album: { albumName } </small> - <small> track number: { track_number } </small>
               </p>
             </Content>
           </Media.Content>

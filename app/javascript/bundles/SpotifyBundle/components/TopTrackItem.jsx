@@ -21,9 +21,10 @@ class TopTrackItem extends React.Component {
   }
 
   render() {
-    const { id, name, duration_ms, liked } = this.props
+    const { id, name, duration_ms, liked, track_number } = this.props
     const artist = this.props.artists[0].name
     const imagelink = this.props.album.images[2].url
+    const albumName = this.props.album.name
 
     let imageStyle = {width: '10vw'};
 
@@ -36,6 +37,9 @@ class TopTrackItem extends React.Component {
           <Media.Content>
             <Content>
               <p><strong>{ name }</strong> - <strong> { artist}</strong> <small>{Math.round(duration_ms*0.0000166667)} min</small></p>
+              <p>
+                <small> Album: { albumName } </small> - <small> track number: { track_number } </small>
+              </p>
               <LikeButton onChange={this.toggleLike} liked={liked} />
             </Content>
           </Media.Content>
