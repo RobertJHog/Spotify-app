@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Title from './Title'
 import { connect } from 'react-redux'
 import fetchRecommendations from '../actions/recommendations/fetch'
-import addSeeds from '../actions/seeds/create'
 import { Box, Button } from 'reactbulma'
 import RecommendationsOverview from './RecommendationsOverview'
 import NoRecommendationsOverview from './noRecommendationsOverview'
@@ -18,10 +18,9 @@ class Recommendations extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // componentDidMount() {
-  //   console.log("fetch rec function!")
-  //   this.props.fetchRecommendations()
-  // }
+  static propTypes = {
+    recommendations: PropTypes.array.isRequired
+  }
 
   setLoaded(seedsArray) {
     console.log(seedsArray.length)
@@ -49,7 +48,7 @@ class Recommendations extends React.Component {
 
   render() {
     const isLoaded = this.state.isLoaded
-    const seedsArray = this.state.seedsArray
+    const recommendations = this.props.recommendations
 
     return(
       <div className="container recommendations">
@@ -58,7 +57,7 @@ class Recommendations extends React.Component {
             <Button primary onClick={this.handleClick}>Get Recommendations</Button>
           </header>
            { isLoaded ?
-             <RecommendationsOverview seedsArray = {seedsArray} /> :
+             <RecommendationsOverview recommendations = {recommendations} /> :
              <NoRecommendationsOverview />
            }
         </div>

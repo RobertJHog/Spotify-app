@@ -4,20 +4,22 @@ import RecommendationItem from './RecommendationItem'
 
 class RecommendationsOverview extends Component {
   static propTypes = {
-    seedsArray: PropTypes.array.isRequired
+    recommendations: PropTypes.array.isRequired
   }
 
-  renderRecommendations(seed, index) {
+  renderRecommendations(recommendation, index) {
     return (
-      <RecommendationItem key={index} {...seed} />
+      <RecommendationItem key={index} {...recommendation} />
     )
   }
 
   render() {
-    const { seedsArray } = this.props
+    const recommendations = this.props
+    console.log("props", this.recommendations)
 
     return(
-      <div className="container recommendations-overview"> { seedsArray.map(this.renderRecommendations) } </div>
+      <div>test </div>
+      // <div className="container recommendations-overview"> { recommendations.map(this.renderRecommendations) } </div>
     )
   }
 }

@@ -19,9 +19,8 @@ class TopTracksContainer extends Component {
   }
 
   componentDidMount() {
-    console.log("fetch function!")
     this.props.fetchToptracks()
-}
+  }
 
   render() {
     return(

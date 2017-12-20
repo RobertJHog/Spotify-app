@@ -17,6 +17,10 @@
 !/log/.keep
 !/tmp/.keep
 
+/config/application.rb
+/config/secrets.yml
+/config/initializers/omniauth.rb
+
 /node_modules
 /yarn-error.log
 
