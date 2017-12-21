@@ -33,7 +33,10 @@ class Recommendations extends React.Component {
   handleClick() {
     const seedsArray = this.state.seedsArray
     seedsArray.length = 0
+    this.createSeeds(seedsArray)
+  }
 
+  createSeeds(seedsArray) {
     this.props.toptracks.map(function (toptrack) {
       if (toptrack.liked === true) {
         seedsArray.push(toptrack.id)
@@ -41,7 +44,6 @@ class Recommendations extends React.Component {
         return
       }
     })
-
     this.props.fetchRecommendations(seedsArray)
     setTimeout(() => {
       this.setLoaded(seedsArray)
