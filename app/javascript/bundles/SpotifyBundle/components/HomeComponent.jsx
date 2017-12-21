@@ -6,9 +6,6 @@ import IntroContainer from './IntroContainer'
 import Recommendations from './recommendations/Recommendations'
 
 export default class HomeComponent extends React.Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired
-  };
 
   render() {
 

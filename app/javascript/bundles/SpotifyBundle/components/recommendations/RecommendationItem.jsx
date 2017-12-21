@@ -65,6 +65,7 @@ class RecommendationItem extends Component {
         </Media>
         <div className="player-item">
           <Button info onClick={this.handleClick}> {this.classNames() } </Button>
+          <br/>
             { isActive ?
               <SpotifyPlayer id={id} /> :
               null

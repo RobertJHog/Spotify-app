@@ -30,6 +30,14 @@ class Recommendations extends React.Component {
     }
   }
 
+  classNames() {
+    let classes = 'Get recommendations'
+
+    if (this.state.isLoaded) { classes = 'Get new recommendations' }
+
+    return classes
+  }
+
   handleClick() {
     const seedsArray = this.state.seedsArray
     seedsArray.length = 0
@@ -59,7 +67,7 @@ class Recommendations extends React.Component {
       <div className="container recommendations">
         <div className="songs wrapper">
           <header>
-            <Button primary onClick={this.handleClick}>Get Recommendations</Button>
+            <Button primary onClick={this.handleClick}> { this.classNames() }</Button>
           </header>
            { isLoaded ?
              <RecommendationsOverview /> :

@@ -23,5 +23,6 @@ ReactOnRails.register({
   IntroContainer,
   Recommendations,
   RecommendationsOverview,
-  NoRecommendationsOverview
+  NoRecommendationsOverview,
+  RecommendationItem
 });

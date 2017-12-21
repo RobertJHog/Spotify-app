@@ -14,7 +14,7 @@ export default class SpotifyApp extends React.Component {
 
     return (
       <Provider store={store}>
-        <HomeComponent name="Frits"/>
+        <HomeComponent/>
       </Provider>
     );
   }
