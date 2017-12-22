@@ -35,7 +35,7 @@ class NavBar extends PureComponent {
         </Level.Left>
         <Level.Right>
           <Level.Item>
-            <a href='/auth/spotify?showDialog=true'> { this.classNames() } </a>
+            <a href='/auth/spotify'> { this.classNames() } </a>
           </Level.Item>
         </Level.Right>
       </Level>
