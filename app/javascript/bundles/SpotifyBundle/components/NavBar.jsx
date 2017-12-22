@@ -1,5 +1,5 @@
 import React, { PureComponent, PropTypes } from 'react'
-import { Nav, Level } from 'reactbulma'
+import { Nav, Level, Hero, SubTitle } from 'reactbulma'
 import { connect } from 'react-redux'
 import fetchUser from '../actions/user/fetch'
 
@@ -12,7 +12,7 @@ class NavBar extends PureComponent {
   classNames() {
     let classes = 'Sign in with Spotify'
 
-    if (this.props.user[0]) { classes = 'Sign out' }
+    if (this.props.user[0]) { classes = 'Signed in' }
 
     return classes
   }
@@ -25,7 +25,13 @@ class NavBar extends PureComponent {
     return (
       <Level className="navbar">
         <Level.Left>
-          <Level.Item> Welcome { id } </Level.Item>
+          <Level.Item>
+            <Hero>
+              <Hero.Body>
+                <SubTitle> Welcome { id } </SubTitle>
+               </Hero.Body>
+             </Hero>
+          </Level.Item>
         </Level.Left>
         <Level.Right>
           <Level.Item>
