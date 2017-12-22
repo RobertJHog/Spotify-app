@@ -2,6 +2,7 @@ import React, { PureComponent, PropTypes } from 'react'
 import { Nav, Level, Hero, SubTitle } from 'reactbulma'
 import { connect } from 'react-redux'
 import fetchUser from '../actions/user/fetch'
+import './NavBar.scss'
 
 class NavBar extends PureComponent {
 
