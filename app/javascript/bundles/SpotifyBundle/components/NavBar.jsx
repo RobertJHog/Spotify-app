@@ -9,10 +9,6 @@ class NavBar extends PureComponent {
     this.props.fetchUser()
   }
 
-  signOut () {
-    AuthenticationClient.clearCookies(getApplication());
-  }
-
   classNames() {
     let classes = 'Sign in with Spotify'
 
@@ -33,7 +29,7 @@ class NavBar extends PureComponent {
         </Level.Left>
         <Level.Right>
           <Level.Item>
-            <a href='/auth/spotify'> { this.classNames() } </a>
+            <a href='/auth/spotify?showDialog=true'> { this.classNames() } </a>
           </Level.Item>
         </Level.Right>
       </Level>
