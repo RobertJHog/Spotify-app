@@ -52,10 +52,18 @@ class Recommendations extends React.Component {
         return
       }
     })
-    this.props.fetchRecommendations(seedsArray)
-    setTimeout(() => {
-      this.setLoaded(seedsArray)
-    }, 1000)
+    this.loadRecommendations(seedsArray)
+  }
+
+  loadRecommendations(seedsArray) {
+    if (seedsArray.length > 0) {
+      this.props.fetchRecommendations(seedsArray)
+      setTimeout(() => {
+        this.setLoaded(seedsArray)
+      }, 1000)
+    } else {
+      return
+    }
   }
 
   render() {

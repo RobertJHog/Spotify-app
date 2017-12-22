@@ -16,7 +16,7 @@ class NavBar extends PureComponent {
   classNames() {
     let classes = 'Sign in with Spotify'
 
-    if (this.props.user[0]) { classes = 'Signed in' }
+    if (this.props.user[0]) { classes = 'Sign out' }
 
     return classes
   }

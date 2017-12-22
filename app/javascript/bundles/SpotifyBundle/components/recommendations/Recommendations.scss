@@ -6,11 +6,35 @@
 }
 
 .recommendations {
-  flex-basis: 40%;
+  // flex-basis: 50%;
   width: 40vw;
   float: right;
 }
 
-.button {
-  // float: right;
+header {
+  margin-bottom: .5em;
+}
+
+.button.is-info {
+  background-color: #2f2d2d;
+  border-color: none !important;
+}
+
+.button.is-info:focus {
+  background-color: #2f2d2d;
+  border-color: none !important;
+}
+
+.button.is-info:hover {
+  background-color: #84bd00;
+  border-color: none !important;
+}
+
+@media screen and (max-width: 480px) {
+  .recommendations-overview {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 60vw;
+  }
 }
