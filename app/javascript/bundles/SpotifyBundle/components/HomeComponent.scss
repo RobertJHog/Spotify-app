@@ -4,3 +4,8 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+@media screen and (max-width: 480px) {
+  .re-top {
+    flex-direction: row;
+  }

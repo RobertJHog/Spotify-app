@@ -18,3 +18,14 @@ header {
 .content h1 {
   // text-align: center;
 }
+
+@media screen and (max-width: 480px) {
+  .topsongs-overview {
+    width: 90vw;
+  }
+
+  .topsongs {
+    flex: 1;
+    width: 90vw;
+  }
+}

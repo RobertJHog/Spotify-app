@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import './SpotifyPlayer.scss'
 
 class SpotifyPlayer extends PureComponent {
 
@@ -6,10 +7,8 @@ class SpotifyPlayer extends PureComponent {
     const { id } = this.props
 
     return (
-      <div>
         <iframe src={"https://open.spotify.com/embed?uri=spotify:track:" + id}
         frameBorder="0" allowtransparency="true"></iframe>
-      </div>
     )
   }
 }

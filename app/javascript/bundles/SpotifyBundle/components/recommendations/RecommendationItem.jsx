@@ -54,23 +54,16 @@ class RecommendationItem extends Component {
           </Media.Left>
           <Media.Content>
             <Content>
-              <p>
-                <strong> { name } </strong> - <strong> { artist } </strong> <small> {Math.round(duration_ms*0.0000166667)} min</small>
-              </p>
-              <p>
-                <small> Album: { albumName } </small> - <small> track number: { track_number } </small>
-              </p>
+              <p> <strong> { name } </strong> - <strong> { artist } </strong> <small> {Math.round(duration_ms*0.0000166667)} min</small> </p>
+              <p> <small> Album: { albumName } </small> - <small> track number: { track_number } </small> </p>
+              <p> <Button info onClick={this.handleClick}> {this.classNames() } </Button> </p>
             </Content>
           </Media.Content>
         </Media>
-        <div className="player-item">
-          <Button info onClick={this.handleClick}> {this.classNames() } </Button>
-          <br/>
-            { isActive ?
-              <SpotifyPlayer id={id} /> :
-              null
-            }
-        </div>
+        { isActive ?
+          <SpotifyPlayer id={id} /> :
+          null
+        }
       </Box>
     )
   }

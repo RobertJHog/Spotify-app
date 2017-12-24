@@ -2,13 +2,16 @@
   flex-basis: 100%;
   margin-top: .5em;
   padding: 1em;
-  max-height: 18em;
+  max-height: 20em;
 }
 
 .img-responsive {
   border-radius: 5%;
 }
 
-.player-item {
-  margin-top: .5em;
+@media screen and (max-width: 480px) {
+  .recommendation-item {
+    width: 100%;
+    margin-right: 3em;
+  }
 }
