@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import TopTrackItem from './TopTrackItem'
 import { Box } from 'reactbulma'
 import fetchToptracks from '../../actions/toptracks/fetch'
+import fetchUser from '../../actions/user/fetch'
 import './TopTracksContainer.scss'
 
 class TopTracksContainer extends Component {
@@ -19,7 +20,9 @@ class TopTracksContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchToptracks()
+    if (this.props.user) {
+      this.props.fetchToptracks()
+    }
   }
 
   render() {
@@ -36,6 +39,6 @@ class TopTracksContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ toptracks }) => ({ toptracks })
+const mapStateToProps = ({ toptracks, user }) => ({ toptracks, user })
 
-export default connect(mapStateToProps, {fetchToptracks})(TopTracksContainer)
+export default connect(mapStateToProps, {fetchToptracks, fetchUser})(TopTracksContainer)

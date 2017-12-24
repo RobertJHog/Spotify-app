@@ -15,6 +15,10 @@ header {
   margin-bottom: .5em;
 }
 
+.button {
+  font-weight: bold;
+}
+
 .button.is-info {
   background-color: #2f2d2d;
   border-color: none !important;
@@ -30,11 +34,11 @@ header {
   border-color: none !important;
 }
 
-@media screen and (max-width: 480px) {
-  .recommendations-overview {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 60vw;
-  }
-}
+// @media screen and (max-width: 480px) {
+//   .recommendations-overview {
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     max-width: 60vw;
+//   }
+// }

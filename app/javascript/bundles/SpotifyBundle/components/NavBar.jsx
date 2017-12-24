@@ -5,9 +5,22 @@ import fetchUser from '../actions/user/fetch'
 import './NavBar.scss'
 
 class NavBar extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      signedIn: false
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
 
   componentDidMount() {
-    this.props.fetchUser()
+    if (this.state.signedIn) {
+      this.props.fetchUser()
+    }
+  }
+
+  handleClick() {
+    this.setState({signedIn: true})
   }
 
   classNames() {
@@ -19,7 +32,7 @@ class NavBar extends PureComponent {
   }
 
   render() {
-    const { signedIn } = true;
+    const { signedIn } = this.state.signedIn
     const user = this.props.user[0]
     const { id } = { ...user }
 
@@ -36,7 +49,7 @@ class NavBar extends PureComponent {
         </Level.Left>
         <Level.Right>
           <Level.Item>
-            <a href='/auth/spotify'> { this.classNames() } </a>
+            <a href='/auth/spotify' onClick={this.handleClick}> { this.classNames() } </a>
           </Level.Item>
         </Level.Right>
       </Level>
