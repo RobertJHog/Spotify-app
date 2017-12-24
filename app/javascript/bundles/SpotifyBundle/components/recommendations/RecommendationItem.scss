@@ -2,10 +2,7 @@
   flex-basis: 100%;
   margin-top: .5em;
   padding: 1em;
-}
-
-.favorite {
-  float: right;
+  max-height: 18em;
 }
 
 .img-responsive {
@@ -14,8 +11,4 @@
 
 .player-item {
   margin-top: .5em;
-}
-
-.recommendation-item {
-  max-height: 18em;
 }

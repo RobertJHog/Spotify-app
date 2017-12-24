@@ -25,14 +25,12 @@ class TopTracksContainer extends Component {
   render() {
     return(
       <div className="container topsongs">
-        <div className="songs wrapper">
-          <header>
-            <Title className="title" content="Your spotify Top Tracks" />
-          </header>
-          <main className="container topsongs-overview">
-            { this.props.toptracks.map(this.renderTopTrack) }
-          </main>
-        </div>
+        <header>
+          <Title className="title" content="Your spotify Top Tracks" />
+        </header>
+        <main className="container topsongs-overview">
+          { this.props.toptracks.map(this.renderTopTrack) }
+        </main>
       </div>
     )
   }

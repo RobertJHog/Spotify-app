@@ -12,9 +12,9 @@ export default class HomeComponent extends React.Component {
     return (
       <div className="container react-app">
         <NavBar/>
-        <div className="content">
+        <div className="container content">
           <IntroContainer/>
-          <div className="rec-top">
+          <div className="container rec-top">
             <TopTracksContainer/>
             <Recommendations/>
           </div>

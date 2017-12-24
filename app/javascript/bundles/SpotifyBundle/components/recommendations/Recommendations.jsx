@@ -22,14 +22,6 @@ class Recommendations extends React.Component {
     recommendations: PropTypes.array.isRequired
   }
 
-  setLoaded(seedsArray) {
-    if (seedsArray) {
-      this.setState({isLoaded: true})
-    } else {
-      this.setState({isLoaded: false})
-    }
-  }
-
   classNames() {
     let classes = 'Get recommendations'
 
@@ -60,9 +52,17 @@ class Recommendations extends React.Component {
       this.props.fetchRecommendations(seedsArray)
       setTimeout(() => {
         this.setLoaded(seedsArray)
-      }, 1000)
+      }, 2000)
     } else {
       return
+    }
+  }
+
+  setLoaded(seedsArray) {
+    if (seedsArray) {
+      this.setState({isLoaded: true})
+    } else {
+      this.setState({isLoaded: false})
     }
   }
 
@@ -73,15 +73,13 @@ class Recommendations extends React.Component {
 
     return(
       <div className="container recommendations">
-        <div className="songs wrapper">
-          <header>
-            <Button primary onClick={this.handleClick}> { this.classNames() }</Button>
-          </header>
-           { isLoaded ?
-             <RecommendationsOverview /> :
-             <NoRecommendationsOverview />
-           }
-        </div>
+        <header>
+          <Button primary onClick={this.handleClick}> { this.classNames() }</Button>
+        </header>
+         { isLoaded ?
+           <RecommendationsOverview /> :
+           <NoRecommendationsOverview />
+         }
       </div>
     )
   }
