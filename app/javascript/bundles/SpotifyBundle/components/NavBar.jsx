@@ -14,9 +14,9 @@ class NavBar extends PureComponent {
   }
 
   componentDidMount() {
-    if (this.state.signedIn) {
+    // if (this.state.signedIn) {
       this.props.fetchUser()
-    }
+    // }
   }
 
   handleClick() {
@@ -35,6 +35,7 @@ class NavBar extends PureComponent {
     const { signedIn } = this.state.signedIn
     const user = this.props.user[0]
     const { id } = { ...user }
+
 
     return (
       <Level className="navbar">
