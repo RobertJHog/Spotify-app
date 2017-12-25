@@ -1,3 +1,10 @@
 .intro-container {
   margin-bottom: 2em;
 }
+
+@media screen and (max-width: 480px) {
+  .intro-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
