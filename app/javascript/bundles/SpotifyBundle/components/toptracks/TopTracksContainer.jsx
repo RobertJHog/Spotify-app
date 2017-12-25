@@ -11,6 +11,7 @@ import './TopTracksContainer.scss'
 class TopTracksContainer extends Component {
   static propTypes = {
     toptracks: PropTypes.array.isRequired,
+    user: PropTypes.array.isRequired
   }
 
   renderTopTrack(toptrack, index) {
@@ -20,6 +21,7 @@ class TopTracksContainer extends Component {
   }
 
   componentDidMount() {
+    // user array always exists so user will always be true. Should be .length > 0
     if (this.props.user) {
       this.props.fetchToptracks()
     }

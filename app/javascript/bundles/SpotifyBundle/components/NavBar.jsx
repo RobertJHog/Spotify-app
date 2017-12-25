@@ -7,16 +7,16 @@ import './NavBar.scss'
 class NavBar extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      signedIn: false
-    }
+      this.state = {
+        signedIn: false
+      }
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    // if (this.state.signedIn) {
+    if (this.state.signedIn) {
       this.props.fetchUser()
-    // }
+    }
   }
 
   handleClick() {
@@ -32,7 +32,7 @@ class NavBar extends PureComponent {
   }
 
   render() {
-    const { signedIn } = this.state.signedIn
+    const signedIn = this.state.signedIn
     const user = this.props.user[0]
     const { id } = { ...user }
 

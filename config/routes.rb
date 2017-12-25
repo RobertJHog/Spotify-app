@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :toptracks, defaults: { format: :json}, only: [:index]
   resources :recommendations, defaults: { format: :json}, only: [:index]
   resources :users, defaults: { format: :json}, only: [:index, :spotify]
+
+  get '*path' => redirect('/')
+
 end

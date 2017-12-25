@@ -5,10 +5,9 @@ import NavBar from './NavBar'
 import IntroContainer from './IntroContainer'
 import Recommendations from './recommendations/Recommendations'
 
-export default class HomeComponent extends React.Component {
+class HomeComponent extends React.Component {
 
   render() {
-
     return (
       <div className="container react-app">
         <NavBar/>
@@ -23,3 +22,5 @@ export default class HomeComponent extends React.Component {
     );
   }
 }
+
+export default HomeComponent
