@@ -52,7 +52,7 @@ class Recommendations extends React.Component {
       this.props.fetchRecommendations(seedsArray)
       setTimeout(() => {
         this.setLoaded(seedsArray)
-      }, 1500)
+      }, 2000)
     } else {
       return
     }
