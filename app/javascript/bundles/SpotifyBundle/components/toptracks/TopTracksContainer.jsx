@@ -21,9 +21,11 @@ class TopTracksContainer extends Component {
   }
 
   componentDidUpdate() {
-    if (this.props.isSignedIn && this.props.toptracks.length < 1) {
-      this.props.fetchToptracks()
-    }
+    setTimeout(() => {
+      if (this.props.isSignedIn && this.props.toptracks.length < 1) {
+        this.props.fetchToptracks()
+      }
+    }, 1000)
   }
 
   render() {

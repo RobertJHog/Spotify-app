@@ -14,7 +14,6 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser()
-    console.log("fetched user?", this.props.user[0])
     setTimeout(() => {
       this.props.setLoggedIn(true)
       this.setState({
