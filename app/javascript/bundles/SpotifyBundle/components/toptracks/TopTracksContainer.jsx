@@ -20,9 +20,8 @@ class TopTracksContainer extends Component {
     )
   }
 
-  componentDidMount() {
-    // user array always exists so user will always be true. Should be .length > 0
-    if (this.props.user) {
+  componentDidUpdate() {
+    if (this.props.isSignedIn && this.props.toptracks.length < 1) {
       this.props.fetchToptracks()
     }
   }

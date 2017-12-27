@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    spotify_user = RSpotify::User.new(session[:spotify_access_token])
-    render json: spotify_user, status: :ok
+    signedin_user = RSpotify::User.new(session[:spotify_access_token])
+    render json: signedin_user, status: :ok
   end
 end

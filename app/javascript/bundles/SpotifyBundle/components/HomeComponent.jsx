@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import NavBar from './NavBar'
 import IntroContainer from './IntroContainer'
-import RecAndTopComponent from './RecAndTopComponent'
+import TopTracksContainer from './toptracks/TopTracksContainer'
+import Recommendations from './recommendations/Recommendations'
 
 class HomeComponent extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class HomeComponent extends React.Component {
 
   setLoggedIn(bool) {
      this.setState({
-         isSignedIn: bool
+        isSignedIn: bool
      })
  }
 
@@ -24,13 +25,11 @@ class HomeComponent extends React.Component {
 
     return (
       <div className="container react-app">
-        <NavBar isSignedIn={this.state.isSignedIn} setLoggedIn={this.setLoggedIn} />
+        <NavBar isSignedIn={isSignedIn} setLoggedIn={this.setLoggedIn} />
         <div className="container content">
           <IntroContainer/>
-          { isSignedIn ?
-            <RecAndTopComponent/> :
-            null
-          }
+          <TopTracksContainer isSignedIn={isSignedIn}/>
+          <Recommendations/>
         </div>
       </div>
     );

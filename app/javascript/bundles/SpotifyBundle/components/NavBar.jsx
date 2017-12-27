@@ -4,21 +4,23 @@ import { connect } from 'react-redux'
 import fetchUser from '../actions/user/fetch'
 import './NavBar.scss'
 
-class NavBar extends PureComponent {
+class NavBar extends React.Component {
   constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
+    super(props)
+    this.state = {
+      isSignedIn: this.props.isSignedIn
+    }
   }
 
   componentDidMount() {
-    // if (this.props.isSignedIn && this.props.user.length < 1) {
-      this.props.fetchUser()
-    // }
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    this.props.setLoggedIn(true)
+    this.props.fetchUser()
+    console.log("fetched user?", this.props.user[0])
+    setTimeout(() => {
+      this.props.setLoggedIn(true)
+      this.setState({
+         isSignedIn: true
+      })
+    }, 500)
   }
 
   classNames() {
@@ -46,7 +48,7 @@ class NavBar extends PureComponent {
         </Level.Left>
         <Level.Right>
           <Level.Item>
-            <a href='/auth/spotify' onClick={this.handleClick}> { this.classNames() } </a>
+            <a href="/auth/spotify"> { this.classNames() } </a>
           </Level.Item>
         </Level.Right>
       </Level>
