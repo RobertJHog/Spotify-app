@@ -5,9 +5,10 @@ import RecommendationItem from '../recommendations/RecommendationItem'
 import fetchRecommendations from '../../actions/recommendations/fetch'
 
 class RecommendationsOverview extends Component {
-  // static propTypes = {
-  //   tracks: PropTypes.array.isRequired
-  // }
+  static propTypes = {
+    tracks: PropTypes.array.isRequired,
+    recommendations: PropTypes.array.isRequired
+  }
 
   renderRecommendations(recommendations, index) {
     return (

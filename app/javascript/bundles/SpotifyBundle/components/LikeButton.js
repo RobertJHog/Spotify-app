@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types';
 import HeartGrey from '../../../../assets/images/heart-grey.svg'
 import HeartRed from '../../../../assets/images/heart-red.svg'
 import './LikeButton.scss'
 
 class LikeButton extends PureComponent {
+  static propTypes = {
+    onChange: PropTypes.func.isRequired,
+  }
 
   classNames() {
     const { liked } = this.props

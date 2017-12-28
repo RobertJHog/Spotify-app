@@ -12,6 +12,7 @@ class TopTrackItem extends React.Component {
     name: PropTypes.string.isRequired,
     duration_ms: PropTypes.number.isRequired,
     id: PropTypes.string.isRequired,
+    track_number: PropTypes.number.isRequired
   }
 
   toggleLike = () => {
