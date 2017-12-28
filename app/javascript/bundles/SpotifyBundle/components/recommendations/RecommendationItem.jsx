@@ -18,7 +18,8 @@ class RecommendationItem extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     duration_ms: PropTypes.number.isRequired,
-    track_number: PropTypes.number.isRequired
+    track_number: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired
   }
 
   classNames() {

@@ -5,13 +5,12 @@ import { connect } from 'react-redux'
 import TopTrackItem from './TopTrackItem'
 import { Box } from 'reactbulma'
 import fetchToptracks from '../../actions/toptracks/fetch'
-import fetchUser from '../../actions/user/fetch'
 import './TopTracksContainer.scss'
 
 class TopTracksContainer extends Component {
   static propTypes = {
     toptracks: PropTypes.array.isRequired,
-    user: PropTypes.array.isRequired
+    isSignedIn: PropTypes.bool.isRequired
   }
 
   renderTopTrack(toptrack, index) {
@@ -21,11 +20,9 @@ class TopTracksContainer extends Component {
   }
 
   componentDidUpdate() {
-    setTimeout(() => {
-      if (this.props.isSignedIn && this.props.toptracks.length < 1) {
-        this.props.fetchToptracks()
-      }
-    }, 1000)
+    if (this.props.isSignedIn && this.props.toptracks.length < 1) {
+      this.props.fetchToptracks()
+    }
   }
 
   render() {
@@ -42,6 +39,6 @@ class TopTracksContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ toptracks, user }) => ({ toptracks, user })
+const mapStateToProps = ({ toptracks }) => ({ toptracks })
 
-export default connect(mapStateToProps, {fetchToptracks, fetchUser})(TopTracksContainer)
+export default connect(mapStateToProps, {fetchToptracks})(TopTracksContainer)
