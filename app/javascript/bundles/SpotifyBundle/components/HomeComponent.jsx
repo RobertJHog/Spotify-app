@@ -21,9 +21,12 @@ class HomeComponent extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser()
-    setTimeout(() => {
+  }
+
+  componentDidUpdate() {
+    if (this.props.user[0] && !this.state.isSignedIn) {
       this.setSignedIn()
-    }, 1000)
+    }
   }
 
   setSignedIn() {

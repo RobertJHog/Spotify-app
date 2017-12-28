@@ -15,7 +15,6 @@ class NavBar extends React.Component {
 
   render() {
     const id = this.props.id
-    console.log(this.props, "ID")
 
     return (
       <Level className="navbar">
@@ -30,7 +29,11 @@ class NavBar extends React.Component {
         </Level.Left>
         <Level.Right>
           <Level.Item>
-            <a href="/auth/spotify"> { this.classNames() } </a>
+            <Hero>
+              <Hero.Body>
+                <a href="/auth/spotify"> { this.classNames() } </a>
+              </Hero.Body>
+            </Hero>
           </Level.Item>
         </Level.Right>
       </Level>

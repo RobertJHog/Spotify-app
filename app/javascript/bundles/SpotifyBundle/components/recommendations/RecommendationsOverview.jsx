@@ -6,7 +6,6 @@ import fetchRecommendations from '../../actions/recommendations/fetch'
 
 class RecommendationsOverview extends Component {
   static propTypes = {
-    tracks: PropTypes.array.isRequired,
     recommendations: PropTypes.array.isRequired
   }
 
