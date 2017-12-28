@@ -6,6 +6,7 @@ import IntroContainer from './IntroContainer'
 import TopTracksContainer from './toptracks/TopTracksContainer'
 import Recommendations from './recommendations/Recommendations'
 import fetchUser from '../actions/user/fetch'
+import './HomeComponent.scss'
 
 class HomeComponent extends React.Component {
   constructor(props) {

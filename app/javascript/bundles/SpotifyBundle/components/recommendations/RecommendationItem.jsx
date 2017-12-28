@@ -55,7 +55,7 @@ class RecommendationItem extends Component {
           </Media.Left>
           <Media.Content>
             <Content>
-              <p> <strong> { name } </strong> - <strong> { artist } </strong> <small> {Math.round(duration_ms*0.0000166667)} min</small> </p>
+              <p> <strong> { name } </strong> - <strong> { artist } </strong> <small>({Math.round(duration_ms*0.0000166667)} min)</small> </p>
               <p> <small> Album: { albumName } </small> - <small> track number: { track_number } </small> </p>
               <p> <Button info onClick={this.handleClick}> {this.classNames() } </Button> </p>
             </Content>

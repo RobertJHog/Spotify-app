@@ -35,7 +35,7 @@ class TopTrackItem extends React.Component {
           </Media.Left>
           <Media.Content>
             <Content>
-              <p><strong>{ name }</strong> - <strong> { artist}</strong> <small>{Math.round(duration_ms*0.0000166667)} min</small></p>
+              <p><strong>{ name }</strong> - <strong> { artist}</strong> <small>({Math.round(duration_ms*0.0000166667)} min)</small></p>
               <p>
                 <small> Album: { albumName } </small>
               </p>
