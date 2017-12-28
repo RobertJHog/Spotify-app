@@ -43,7 +43,9 @@ class Recommendations extends React.Component {
         return
       }
     })
-    this.loadRecommendations(seedsArray)
+    setTimeout(() => {
+      this.loadRecommendations(seedsArray)
+    }, 1000)
   }
 
   loadRecommendations(seedsArray) {
@@ -73,7 +75,7 @@ class Recommendations extends React.Component {
     return(
       <div className="container recommendations">
         <header>
-          <Button primary onClick={this.handleClick}> { this.classNames() }</Button>
+          <Button className="rec-button" primary onClick={this.handleClick}> { this.classNames() }</Button>
         </header>
          { isLoaded ?
            <RecommendationsOverview /> :

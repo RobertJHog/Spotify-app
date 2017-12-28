@@ -37,9 +37,7 @@ header {
 @media screen and (max-width: 480px) {
   .recommendations-overview {
     width: 100%;
-    margin-left: -15px;
-    margin-right: -15px;
-    padding: 5px;
+    padding: 10px;
   }
 
   .recommendations {
@@ -51,7 +49,8 @@ header {
     width: 100%;
   }
 
-  .button {
-    left: 25%;
+  .rec-button {
+    left: 2.5%;
+    margin-top: 5%;
   }
 }
