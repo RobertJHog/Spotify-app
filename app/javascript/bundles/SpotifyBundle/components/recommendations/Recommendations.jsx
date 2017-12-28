@@ -14,7 +14,9 @@ class Recommendations extends React.Component {
     super(props);
     this.state = {
       isLoaded: false,
-      isLoading: false
+      isLoading: false,
+      likedSongs: [],
+      buttonActive: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -23,12 +25,44 @@ class Recommendations extends React.Component {
     recommendations: PropTypes.array.isRequired
   }
 
-  classNames() {
-    let classes = 'Get recommendations'
+  componentWillReceiveProps() {
+      setTimeout(() => {
+        this.checkLikes()
+      }, 1000)
+  }
 
-    if (this.state.isLoaded) { classes = 'Get new recommendations' }
+  classNames() {
+    let classes = ''
+    let likedLength = this.state.likedSongs.length
+
+    if (this.state.isLoaded && likedLength > 0) { classes = 'Get new recommendations' }
+    else if (likedLength > 0) { classes = 'Get Recommendations' }
+    else { classes = 'To request one must like' }
 
     return classes
+  }
+
+  checkLikes() {
+    const tracks = this.props.toptracks
+    let likedArray = []
+    tracks.forEach( function (track) {
+      if (track.liked) {
+        likedArray.push(track)
+      }
+      else {
+      }
+    })
+    this.setLikes(likedArray)
+  }
+
+  setLikes(likedArray) {
+    setTimeout(() => {
+      if (likedArray.length > 0) {
+        this.setState({likedSongs: likedArray})
+      } else {
+        this.setState({likedSongs: []})
+      }
+    }, 500)
   }
 
   handleClick() {
@@ -50,7 +84,7 @@ class Recommendations extends React.Component {
     })
     setTimeout(() => {
       this.loadRecommendations(seedsArray)
-    }, 1000)
+    }, 750)
   }
 
   loadRecommendations(seedsArray) {
@@ -78,11 +112,13 @@ class Recommendations extends React.Component {
     const isLoading = this.state.isLoading
     const recommendations = this.props.recommendations[0]
     const { tracks } = { ...recommendations }
+    const likedSongs = this.state.likedSongs
 
     return(
       <div className="container recommendations">
         <header>
-          <Button className="rec-button" primary onClick={this.handleClick}> { this.classNames() }</Button>
+          <Button className="rec-button" primary onClick={this.handleClick} disabled={likedSongs.length < 1}>
+           { this.classNames() }</Button>
         </header>
         { isLoading ?
           <LoadingSpinner/> :
