@@ -12,8 +12,7 @@ class Recommendations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false,
-      seedsArray: []
+      isLoaded: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -31,7 +30,7 @@ class Recommendations extends React.Component {
   }
 
   handleClick() {
-    const seedsArray = this.state.seedsArray
+    const seedsArray = []
     seedsArray.length = 0
     this.createSeeds(seedsArray)
   }
