@@ -6,13 +6,15 @@ import fetchRecommendations from '../../actions/recommendations/fetch'
 import { Box, Button } from 'reactbulma'
 import RecommendationsOverview from './RecommendationsOverview'
 import NoRecommendationsOverview from './NoRecommendationsOverview'
+import LoadingSpinner from '../LoadingSpinner'
 import './Recommendations.scss'
 
 class Recommendations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoaded: false
+      isLoaded: false,
+      isLoading: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -33,6 +35,9 @@ class Recommendations extends React.Component {
     const seedsArray = []
     seedsArray.length = 0
     this.createSeeds(seedsArray)
+    this.setState({
+      isLoading: true
+    })
   }
 
   createSeeds(seedsArray) {
@@ -62,6 +67,7 @@ class Recommendations extends React.Component {
   setLoaded(seedsArray) {
     if (seedsArray) {
       this.setState({isLoaded: true})
+      this.setState({isLoading: false})
     } else {
       this.setState({isLoaded: false})
     }
@@ -69,6 +75,7 @@ class Recommendations extends React.Component {
 
   render() {
     const isLoaded = this.state.isLoaded
+    const isLoading = this.state.isLoading
     const recommendations = this.props.recommendations[0]
     const { tracks } = { ...recommendations }
 
@@ -77,10 +84,18 @@ class Recommendations extends React.Component {
         <header>
           <Button className="rec-button" primary onClick={this.handleClick}> { this.classNames() }</Button>
         </header>
-         { isLoaded ?
-           <RecommendationsOverview /> :
-           <NoRecommendationsOverview />
-         }
+        { isLoading ?
+          <LoadingSpinner/> :
+          null
+        }
+        { isLoaded && (isLoading === false) ?
+            <RecommendationsOverview/> :
+            null
+        }
+        { (isLoaded === false) && (isLoading === false) ?
+            <NoRecommendationsOverview/> :
+            null
+        }
       </div>
     )
   }
