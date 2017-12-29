@@ -74,7 +74,7 @@ class Recommendations extends React.Component {
       } else {
         this.setState({likedSongs: []})
       }
-    }, 500)
+    }, 250)
   }
 
   recommendationClick() {
@@ -140,7 +140,7 @@ class Recommendations extends React.Component {
         <header>
           <Button className="rec-button" primary onClick={this.recommendationClick} disabled={likedSongs.length < 1}>
            { this.recommendationClassNames() }</Button>
-           <Button className="reset-button" onClick={this.resetLikesClick} disabled={likedSongs.length === 0}>
+           <Button className="reset-button" onClick={this.resetLikesClick} disabled={likedSongs.length === 0  || isLoading === true}>
             { this.resetLikesClassNames() }</Button>
         </header>
         { isLoading ?
