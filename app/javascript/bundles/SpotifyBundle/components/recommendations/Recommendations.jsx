@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Title from '../Title'
 import { connect } from 'react-redux'
 import fetchRecommendations from '../../actions/recommendations/fetch'
+import resetLikes from '../../actions/toptracks/resetlikes'
 import { Box, Button } from 'reactbulma'
 import RecommendationsOverview from './RecommendationsOverview'
 import NoRecommendationsOverview from './NoRecommendationsOverview'
@@ -18,7 +19,8 @@ class Recommendations extends React.Component {
       likedSongs: [],
       buttonActive: false
     }
-    this.handleClick = this.handleClick.bind(this);
+    this.recommendationClick = this.recommendationClick.bind(this);
+    this.resetLikesClick = this.resetLikesClick.bind(this);
   }
 
   static propTypes = {
@@ -31,13 +33,23 @@ class Recommendations extends React.Component {
       }, 1000)
   }
 
-  classNames() {
+  recommendationClassNames() {
     let classes = ''
     let likedLength = this.state.likedSongs.length
 
     if (this.state.isLoaded && likedLength > 0) { classes = 'Get new recommendations' }
     else if (likedLength > 0) { classes = 'Get Recommendations' }
     else { classes = 'To request one must like' }
+
+    return classes
+  }
+
+  resetLikesClassNames() {
+    let classes = ''
+    let likedLength = this.state.likedSongs.length
+
+    if (likedLength > 0) { classes = 'Reset likes' }
+    else { classes = 'No likes to reset' }
 
     return classes
   }
@@ -65,13 +77,22 @@ class Recommendations extends React.Component {
     }, 500)
   }
 
-  handleClick() {
+  recommendationClick() {
     const seedsArray = []
     seedsArray.length = 0
     this.createSeeds(seedsArray)
     this.setState({
       isLoading: true
     })
+  }
+
+  resetLikesClick() {
+    let toptracks = this.props.toptracks
+    this.props.resetLikes(toptracks)
+    this.setState({
+      likedSongs: this.state.likedSongs.length = 0
+    })
+
   }
 
   createSeeds(seedsArray) {
@@ -117,8 +138,10 @@ class Recommendations extends React.Component {
     return(
       <div className="container recommendations">
         <header>
-          <Button className="rec-button" primary onClick={this.handleClick} disabled={likedSongs.length < 1}>
-           { this.classNames() }</Button>
+          <Button className="rec-button" primary onClick={this.recommendationClick} disabled={likedSongs.length < 1}>
+           { this.recommendationClassNames() }</Button>
+           <Button className="reset-button" onClick={this.resetLikesClick} disabled={likedSongs.length === 0}>
+            { this.resetLikesClassNames() }</Button>
         </header>
         { isLoading ?
           <LoadingSpinner/> :
@@ -139,4 +162,4 @@ class Recommendations extends React.Component {
 
 const mapStateToProps = ({ recommendations, toptracks }) => ({ recommendations, toptracks })
 
-export default connect(mapStateToProps, {fetchRecommendations})(Recommendations)
+export default connect(mapStateToProps, {fetchRecommendations, resetLikes})(Recommendations)
