@@ -17,6 +17,7 @@ header {
 
 .button {
   font-family: 'Bungee', cursive;
+  margin: 0 1em;
 }
 
 .button.is-info {
@@ -52,5 +53,14 @@ header {
   .rec-button {
     left: 2.5%;
     margin-top: 5%;
+  }
+
+  .reset-button {
+    left: 2.5%;
+    margin-top: 5%;
+  }
+
+  .img-responsive {
+    width: 3.5em !important;
   }
 }
