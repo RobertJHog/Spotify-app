@@ -30,7 +30,7 @@ class LikeButton extends PureComponent {
             <img className="heart" alt="not liked" src={ liked ? HeartRed : HeartGrey } />
           </span>
         </button>
-        <span className="likes">{ liked ? 'You like this' : null }</span>
+        <span className="likes">{ liked ? 'You like this' : 'Like me' }</span>
       </p>
     )
   }
