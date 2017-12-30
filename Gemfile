@@ -47,9 +47,13 @@ gem 'rspotify', git: 'https://github.com/guilhermesad/rspotify.git'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  # Adds support for rspec testing and selenium driver
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+end
+
+group :test do
+  gem 'capybara', '~> 2.9', '>= 2.9.1'
 end
 
 group :development do
